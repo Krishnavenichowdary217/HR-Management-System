@@ -1,47 +1,37 @@
-# HRMS — Human Resource Management System
+# `react`
 
-A simple HR Management System built with **React**, **TypeScript**, and **Vite**.
+React is a JavaScript library for creating user interfaces.
 
-## Features
+The `react` package contains only the functionality necessary to define React components. It is typically used together with a React renderer like `react-dom` for the web, or `react-native` for the native environments.
 
-- **Dashboard** — Organization overview with stats, recent hires, and department headcount
-- **Employees** — Add, edit, delete, and search employees
-- **Departments** — Manage teams and divisions
-- **Leave Requests** — Submit, approve, reject, and track time-off requests
-- **Payroll** — Generate monthly payroll, manage salaries, bonuses, and deductions
-- **Recruitment** — Post job openings and track applicants through the hiring pipeline
+**Note:** by default, React will be in development mode. The development version includes extra warnings about common mistakes, whereas the production version includes extra performance optimizations and strips all error messages. Don't forget to use the [production build](https://reactjs.org/docs/optimizing-performance.html#use-the-production-build) when deploying your application.
 
-Data is persisted in the browser via `localStorage`, so no backend is required to get started.
+## Usage
 
-## Getting Started
+```js
+import { useState } from 'react';
+import { createRoot } from 'react-dom/client';
 
-```bash
-# Install dependencies
-npm install
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </>
+  );
+}
 
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
+const root = createRoot(document.getElementById('root'));
+root.render(<Counter />);
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+## Documentation
 
-## Tech Stack
+See https://react.dev/
 
-- React 19
-- React Router
-- TypeScript
-- Vite
+## API
 
-## Project Structure
-
-```
-src/
-├── components/     # Layout, Sidebar, Modal
-├── context/        # HR state management (HRContext)
-├── pages/          # Dashboard, Employees, Departments, Leave, Payroll, Recruitment
-├── types/          # TypeScript interfaces
-└── utils/          # localStorage helpers
-```
+See https://react.dev/reference/react
